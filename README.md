@@ -241,5 +241,5 @@ unior), Зарплата: None-None None, URL: https://hh.ru/vacancy/125897589
 (pythonproject9-py3.13) PS C:\Users\bal1n\...\PythonProject9
 ```
 
-
-
+# ВЫВОД
+Таким образом, все требуемые здания выполнены
