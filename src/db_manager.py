@@ -14,7 +14,7 @@ class DBManager:
         self.params = params
 
     def get_companies_and_vacancies_count(self) -> List[Tuple[str, int]]:
-        """Получает список всех компаний и количество вакансий у каждой
+        """Получает список всех компаний и количество вакансий у каждой компании.
 
         Returns:
             List[Tuple[str, int]]: Список кортежей (название компании, количество вакансий).
@@ -28,7 +28,7 @@ class DBManager:
         return cast(List[Tuple[str, int]], self._execute_query(query))
 
     def get_all_vacancies(self) -> List[Tuple[str, str, int, int, str, str]]:
-        """Получает список всех вакансий с информацией о компании
+        """Получает список всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию
 
         Returns:
             List[Tuple[str, str, int, int, str, str]]:
@@ -49,7 +49,7 @@ class DBManager:
         return cast(List[Tuple[str, str, int, int, str, str]], self._execute_query(query))
 
     def get_avg_salary(self) -> List[Tuple[float]]:
-        """Получает среднюю зарплату по всем вакансиям
+        """Получает среднюю зарплату по всем вакансиям.
 
         Returns:
             List[Tuple[float]]: Средняя зарплата в виде списка с одним элементом.
@@ -63,7 +63,7 @@ class DBManager:
         return cast(List[Tuple[float]], result)
 
     def get_vacancies_with_higher_salary(self) -> List[Tuple[str, float]]:
-        """Получает вакансии с зарплатой выше средней
+        """Получает список всех вакансий, у которых зарплата выше средней по всем вакансиям.
 
         Returns:
             List[Tuple[str, float]]:
@@ -86,7 +86,7 @@ class DBManager:
         return cast(List[Tuple[str, float]], self._execute_query(query))
 
     def get_vacancies_with_keyword(self, keyword: str) -> List[Tuple[str, int, str]]:
-        """Получает вакансии, содержащие ключевое слово в названии
+        """Получает список всех вакансий, в названии которых содержатся переданные в метод слова.
 
         Args:
             keyword (str): Ключевое слово для поиска (например, "Python").
